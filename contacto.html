@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - BetaGar</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome (para íconos como WhatsApp) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Tu CSS personalizado -->
+  <link rel="stylesheet" href="css/estilos.css">
+   
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/img/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="manifest" href="img/site.webmanifest">
+
+</head>
+<body>
+
+	<div id="pantalla-carga">
+    <div class="logo-carga">
+        <img src="img/logo.png" alt="Cargando..."> 
+		<div class="spinner-posicionador">
+            <div class="spinner-rotador"></div>
+        </div>
+    </div>
+	</div>
+
+	<header class="site-header sticky-top">
+    <div class="container header-container">
+        <div class="logo">
+			<a href="index.html">  <img src="img/logo.png" alt="BetaGar" class="logo">
+			</a>
+		</div>
+        <nav class="main-nav-links">
+			<ul>
+				<li><a href="catalogo.html">Catálogo</a></li> 
+				<li><a href="index.html#resena">Reseñas</a></li>   
+				<li><a href="contacto.html" class="nav-active">Contacto</a></li> 
+			</ul>
+		</nav>
+        <div class="header-cart"> <button id="btn-carrito" class="btn btn-outline-dark position-relative" data-bs-toggle="modal" data-bs-target="#modalCarrito">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="carrito-contador" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="display: none;">
+                0
+                </span>
+            </button>
+        </div>
+    </div>
+    </header>
+
+    <section id="pagina-contacto" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 display-5 fw-bold">Ponte en Contacto</h2>
+
+            <div class="row">
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    
+                    <div class="contact-details-block p-4 mb-4 bg-light rounded shadow-sm">
+                        <h4 class="mb-3 fw-semibold"><i class="fas fa-address-book me-2"></i>Nuestros Datos</h4>
+                        <p><i class="fas fa-phone me-2"></i> <a href="tel:+56 9 4976 0364">+56 9 4976 0364</a></p>
+                        <p><i class="fas fa-envelope me-2"></i> <a href="mailto:betagar.chile@gmail.com">betagar.chile@gmail.com</a></p>
+                        <p><i class="fab fa-whatsapp me-2"></i> <a href="https://wa.me/56949760364" target="_blank">Chatea con nosotros</a></p>
+                    </div>
+
+                    <div class="address-block p-4 mb-4 bg-light rounded shadow-sm">
+                        <h4 class="mb-3 fw-semibold"><i class="fas fa-map-marker-alt me-2"></i>Dirección</h4>
+                        <p>Region Metropolitana, Santiago Centro, Chile</p>
+                        <div class="map-responsive mt-3">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53262.31883045164!2d-70.69974775234573!3d-33.45204392252151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662d0069af23abb%3A0x879d59f409ed4897!2sSantiago%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1748281198879!5m2!1ses!2scl" width="100" height="100" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+
+                    <div class="hours-block p-4 bg-light rounded shadow-sm">
+                        <h4 class="mb-3 fw-semibold"><i class="fas fa-clock me-2"></i>Horarios de Atención</h4>
+                        <p>Lunes a Viernes: 09:00 - 22:00 hrs</p>
+                        <p>Sábados: 10:00 - 22:00 hrs</p>
+                        <p>Domingos: Cerrado</p>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="contact-form-wrapper"> <h4 class="mb-3 fw-semibold text-center">Envíanos un Mensaje</h4>
+					
+						<form action="https://formsubmit.co/betagar.chile@gmail.com" method="POST">
+							<div class="mb-3">
+								<label for="name" class="form-label">Nombre</label>
+								<input type="text" class="form-control" id="name" name="name" placeholder="Tu nombre completo" required>
+							</div>
+
+							<div class="mb-3">
+								<label for="email" class="form-label">Correo electrónico</label>
+								<input type="email" class="form-control" id="email" name="email" placeholder="tuemail@ejemplo.com" required>
+							</div>
+
+							<div class="mb-3">
+								<label for="message" class="form-label">Mensaje</label>
+								<textarea class="form-control" id="message" name="message" rows="5" placeholder="Escribe tu consulta aquí..." required></textarea>
+							</div>
+
+							<input type="hidden" name="_next" value="https://eloquent-chimera-3f6862.netlify.app/gracias.html"> 
+							<input type="hidden" name="_subject" value="Nuevo Mensaje de Contacto desde BetaGar">
+							<input type="hidden" name="_captcha" value="false"> 
+							
+							<button type="submit" class="btn btn-primary">Enviar mensaje</button>
+						
+						</form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-section mt-5 pt-4 border-top">
+                <h2 class="text-center mb-4 fw-bold">Preguntas Frecuentes</h2>
+                <div class="accordion" id="accordionFAQ">
+                    
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="faqHeading1">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="false" aria-controls="faqCollapse1">
+                                📦 ¿Hacen envíos a todo el país?
+                            </button>
+                        </h3>
+                        <div id="faqCollapse1" class="accordion-collapse collapse" aria-labelledby="faqHeading1" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                Sí, realizamos envíos a todo el país mediante servicios de mensajería confiables. El costo y tiempo de entrega pueden variar según tu ubicación.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="faqHeading2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+                                💳 ¿Qué métodos de pago aceptan?
+                            </button>
+                        </h3>
+                        <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                Aceptamos pagos vía transferencia bancaria y otros métodos disponibles al coordinar por WhatsApp. Estamos trabajando para integrar más opciones.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="faqHeading3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+                                ⏱️ ¿Cuánto demora en llegar mi pedido?
+                            </button>
+                        </h3>
+                        <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                El tiempo de entrega depende de tu ubicación. Una vez coordinado el pago y envío, te entregamos una estimación.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="faqHeading4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
+                                🛠️ ¿Las correas son compatibles con mi reloj?
+                            </button>
+                        </h3>
+                        <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faqHeading4" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                Sí, nuestras correas son compatibles con la mayoría de los relojes inteligentes. Si tienes dudas, escríbenos por WhatsApp y te ayudamos a verificar.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="faqHeading5">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse5" aria-expanded="false" aria-controls="faqCollapse5">
+                                🔁 ¿Puedo cambiar o devolver una correa?
+                            </button>
+                        </h3>
+                        <div id="faqCollapse5" class="accordion-collapse collapse" aria-labelledby="faqHeading5" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                Sí, aceptamos cambios dentro de los primeros 7 días en caso de fallas o errores en el envío. El producto debe estar sin uso y en buen estado.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="faqHeading6">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse6" aria-expanded="false" aria-controls="faqCollapse6">
+                                📱 ¿Dónde puedo hacer el pedido?
+                            </button>
+                        </h3>
+                        <div id="faqCollapse6" class="accordion-collapse collapse" aria-labelledby="faqHeading6" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                Puedes hacer tu pedido directamente desde el sitio web usando el botón de WhatsApp. Agrega los productos al carrito y luego haz clic en "Finalizar compra".
+                            </div>
+                        </div>
+                    </div>
+					
+					<div class="accordion-item">
+                        <h3 class="accordion-header" id="faqHeading7">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse7" aria-expanded="false" aria-controls="faqCollapse7">
+                                🛍️ ¿Cómo sé cuál es mi talla de correa?
+                            </button>
+                        </h3>
+                        <div id="faqCollapse7" class="accordion-collapse collapse" aria-labelledby="faqHeading7" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                La mayoría de nuestras correas son ajustables y se adaptan a distintos tamaños de muñeca. Si tienes dudas, contáctanos por WhatsApp y te ayudamos a verificar la compatibilidad según tu modelo de reloj. (Próximamente agregaremos una guía de tallas en el sitio).
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="faqHeading8">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse8" aria-expanded="false" aria-controls="faqCollapse8">
+                                ✨ ¿De qué material son las correas?
+                            </button>
+                        </h3>
+                        <div id="faqCollapse8" class="accordion-collapse collapse" aria-labelledby="faqHeading8" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                Trabajamos con correas de silicona de alta calidad, resistentes al agua, suaves al tacto y perfectas para el uso diario. También contamos con opciones deportivas, clásicas y de estilo elegante, dependiendo del modelo.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="faqHeading9">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse9" aria-expanded="false" aria-controls="faqCollapse9">
+                                🧼 ¿Cómo cuido mis correas para que duren más?
+                            </button>
+                        </h3>
+                        <div id="faqCollapse9" class="accordion-collapse collapse" aria-labelledby="faqHeading9" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                Limpia tus correas regularmente con un paño húmedo y suave. Evita el uso de productos abrasivos o químicos fuertes. Si son de silicona, se recomienda no exponerlas constantemente al sol para preservar su color.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="faqHeading10">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse10" aria-expanded="false" aria-controls="faqCollapse10">
+                                🎁 ¿Ofrecen empaques para regalo?
+                            </button>
+                        </h3>
+                        <div id="faqCollapse10" class="accordion-collapse collapse" aria-labelledby="faqHeading10" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                Sí, ofrecemos presentación para regalo. Si deseas este servicio, avísanos al momento de hacer tu pedido por WhatsApp. Es totalmente gratuito y perfecto para sorprender a alguien especial.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="faqHeading11">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse11" aria-expanded="false" aria-controls="faqCollapse11">
+                                📍 ¿Tienen tienda física o solo venden online?
+                            </button>
+                        </h3>
+                        <div id="faqCollapse11" class="accordion-collapse collapse" aria-labelledby="faqHeading11" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                Por el momento solo vendemos online, pero puedes retirar en un punto físico coordinando previamente. Escríbenos por WhatsApp para más detalles sobre entregas o puntos de encuentro.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="faqHeading12">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse12" aria-expanded="false" aria-controls="faqCollapse12">
+                                🤔 No encuentro el producto/modelo que busco, ¿pueden conseguirlo?
+                            </button>
+                        </h3>
+                        <div id="faqCollapse12" class="accordion-collapse collapse" aria-labelledby="faqHeading12" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                ¡Claro! Si estás buscando un color, modelo o estilo específico que no ves en el catálogo, contáctanos. Hacemos pedidos personalizados y te ayudamos a conseguir lo que necesitas.
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>
+            </div>
+        </div>
+    </section>
+	
+	<a href="https://wa.me/56949760364" class="floating-whatsapp" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+	</a>
+	
+	<footer class="footer bg-dark text-white pt-4">
+    <div class="container text-center">
+    <p class="mb-2 fw-bold">BetaGar</p>
+    <ul class="footer-links">
+    <li><a href="#catalogo" class="text-white text-decoration-none">Catálogo</a></li>
+    <li><a href="#resena" class="text-white text-decoration-none">Reseñas</a></li>
+    <li><a href="https://wa.me/56949760364" class="text-white text-decoration-none">Contacto</a></li>
+	</ul>
+
+    <div class="social-icons mt-3">
+      <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook fa-lg me-3"></i></a>
+      <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram fa-lg me-3"></i></a>
+      <a href="https://wa.me/56949760364" target="_blank"><i class="fab fa-whatsapp fa-lg"></i></a>
+    </div>
+    <p class="mt-3 small mb-0">&copy; <span id="year"></span> BetaGar. Todos los derechos reservados.</p>
+    </div>
+    </footer>
+	
+	<button id="btnVolverArriba" title="Volver arriba">
+    <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/carrito.js"></script>      
+	<script src="js/botonarriba.js"></script>
+	<script src="js/cargador.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	
+</body>
+</html>

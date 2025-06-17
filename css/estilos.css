@@ -1,0 +1,952 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px; /* O el valor que estés usando */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box; /* Muy importante */
+}
+
+.sticky-top {
+  position: sticky;
+  top: 0;
+}
+
+.site-header {
+  background-color: #fff;
+  padding: 30px 0;
+  border-bottom: 1px solid #eee;
+  z-index: 1020;
+}
+
+/* Tamaño base del logo para móviles */
+.site-header .logo img {
+    width: 100px; /* El tamaño que habías probado y te parecía mejor para el espacio */
+    height: auto;
+    display: block;
+}
+
+/* Tamaño del logo para tablets y escritorios */
+@media (min-width: 768px) { /* Ajusta este breakpoint según necesites */
+  .site-header .logo img {
+    width: 100px; /* O el tamaño que quieras para pantallas más grandes */
+  }
+}
+
+.logo {
+    flex-grow: 0;    /* No crece */
+    flex-shrink: 0;  /* No se encoge */
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    width: 100%; /* Para que ocupe el ancho definido por .container */
+    /* SIN justify-content aquí */
+    /* El background-color: #f0f0f0; era para la prueba, puedes quitarlo si quieres */
+}
+
+.header-cart {
+    flex-grow: 0;    /* No crece */
+    flex-shrink: 0;  /* No se encoge */
+    display: flex;   /* Para alinear el botón dentro, si este div es más grande que el botón */
+    justify-content: flex-end; /* Alinea el botón del carrito a la derecha dentro de este div */
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px;
+}
+
+.main-nav-links a { /* Cambiado de .main-nav a */
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 600;
+    transition: color 0.2s ease;
+	font-size: 18px;
+}
+
+/* Estilo para CUANDO PASAS EL MOUSE por encima (hover) */
+.main-nav-links a:hover {
+    color: #25d366; /* ¡ESTE ES EL VERDE! */
+}
+
+.main-nav a:hover {
+  color: #25d366;
+}
+
+.main-banner .banner-image {
+  width: 100%;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+.product-section {
+  padding: 40px 0;
+}
+.product-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+.product-card {
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.product-card img {
+  width: 50%;
+  border-radius: 12px;
+}
+.product-card img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.whatsapp-link {
+  background-color: #25d366;
+  color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.floating-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  font-size: 26px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  text-decoration: none;
+  z-index: 1000;
+  transition: all 0.2s ease-in-out;
+}
+
+.floating-whatsapp:hover {
+  background-color: #1ebd5a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.reseña-section {
+  background-color: #f0f0f0;
+  padding: 40px 20px;
+  text-align: center;
+}
+.reseña-section h2 {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .footer .social-icons i {
+    font-size: 32px; /* Más grandes en móvil */
+    margin-bottom: 10px;
+  }
+}
+
+.hero-section {
+  background: linear-gradient(135deg, #2c3e50, #3498db);
+  padding: 80px 0;
+  border-bottom: 4px solid #25d366;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero-section p {
+  font-size: 1.25rem;
+  opacity: 0.9;
+}
+
+.hero-section .btn {
+  font-size: 1.1rem;
+  border-radius: 8px;
+}
+#catalogo h2 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+}
+
+.product-card img {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-card {
+  border-radius: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+#resena h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+}
+
+#resena p {
+  font-size: 1rem;
+}
+
+#resena .card {
+  border-radius: 16px;
+  background-color: #f9f9f9;
+}
+
+#resena img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+.footer-section {
+  background-color: #212529;
+}
+
+.footer-section a {
+  transition: color 0.2s ease-in-out;
+}
+
+.footer-section a:hover {
+  color: #25d366;
+}
+
+.banner-image {
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  width: 100%;
+  height: auto;
+}
+
+.btn {
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.social-icons a {
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.social-icons a[href*="wa.me"]:hover i {
+  color: #25D366;
+}
+
+.social-icons a[href*="instagram.com"]:hover i {
+  color: #E1306C;
+}
+
+.social-icons a[href*="facebook.com"]:hover i {
+  color: #1877F2;
+}
+
+.footer {
+  padding: 30px 0;
+  background-color: #212529;
+  text-align: center; /* Asegura que los elementos dentro del footer estén centrados */
+}
+
+.footer p {
+  color: #cccccc;
+}
+
+.footer ul li {
+  list-style: none;
+}
+
+.footer .social-icons {
+  text-align: center; /* Centrar íconos sociales también */
+}
+
+.footer a {
+  color: #ffffff;
+  transition: color 0.3s ease;
+  text-decoration: none; /* Asegura que no haya subrayado */
+}
+
+.footer a:hover {
+  color: #0dcaf0;
+}
+
+.footer .social-icons a:hover .fa-facebook { color: #1877f2; }
+.footer .social-icons a:hover .fa-instagram { color: #e4405f; }
+.footer .social-icons a:hover .fa-whatsapp { color: #25d366; }
+
+.footer .social-icons i {
+  font-size: 28px; /* Ajusta este tamaño como prefieras */
+  margin-right: 15px;
+}
+
+.footer .social-icons {
+  text-align: center;
+}
+
+.footer-links li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-links li a:hover {
+  color: #25d366;
+}
+
+/* Pie de página: enlaces centrados */
+.footer .container.text-center {
+  text-align: center;      /* asegura que el padre centre elementos inline */
+}
+
+.footer-links {
+  display: inline-flex;    /* se encoge al contenido y se comporta como texto */
+  gap: 30px;               /* espacio entre enlaces */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.footer-links li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-links li a:hover {
+  color: #25d366;
+}
+
+.site-header .container {
+  display: flex; /* Coincide con .header-container, está bien */
+  align-items: center; /* Coincide, está bien */
+  position: relative; /* Para otros usos que puedas tener */
+  /* SIN justify-content aquí para que .main-nav-links controle el espacio central */
+}
+
+.main-nav-links {
+    flex-grow: 1;           /* CLAVE: Hace que ocupe el espacio sobrante */
+    display: flex;
+    justify-content: center;/* CLAVE: Centra la lista <ul> dentro de este <nav> */
+    align-items: center;
+    min-width: 0;           /* Ayuda a Flexbox a encoger el elemento si es necesario */
+}
+
+.main-nav-links ul {
+    display: flex;
+    gap: 30px; /* O el espacio que prefieras */
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+
+/* Tus estilos para .main-nav-links a (tamaño de fuente, color) pueden quedar como están */
+.main-nav-links a.nav-active {
+    color: #1ebd5a; /* Un color diferente para el enlace activo, ej. tu verde más oscuro */
+    font-weight: 700; /* Un poco más de énfasis */
+}
+
+.product-card {
+  text-align: center; /* Centra el contenido de texto y botones */
+}
+
+.product-card img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-banner {
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero-banner::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5); /* oscurece para destacar texto */
+}
+
+.hero-banner .container {
+  position: relative;
+  z-index: 2;
+}
+
+#btnVolverArriba {
+    display: none; /* JavaScript lo gestiona */
+    position: fixed;
+    bottom: 95px;
+    right: 20px;
+    z-index: 1050;
+
+    background-color: #495057; /* Un color primario moderno (ej. azul Bootstrap) - ¡Cámbialo a tu gusto! */
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    width: 60px;  /* Define un ancho fijo */
+    height: 60px; /* Define un alto fijo (igual al ancho para un círculo) */
+    padding: 0;   /* Quitamos padding si el tamaño se controla con width/height y el ícono se centra con flex */
+
+    border-radius: 50%; /* Círculo perfecto */
+
+    display: flex;            /* Para centrar el ícono dentro del botón */
+    align-items: center;      /* Centra el ícono verticalmente */
+    justify-content: center;  /* Centra el ícono horizontalmente */
+
+    font-size: 28px; /* Tamaño del ícono (si es de fuente) o ajusta el tamaño del SVG */
+    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra más elaborada */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+}
+
+#btnVolverArriba:hover {
+    background-color: #343a40; /* Un azul más oscuro al pasar el mouse */
+    transform: translateY(-2px); /* Ligero movimiento hacia arriba */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+}
+
+#btnVolverArriba:active { /* Opcional: efecto al hacer clic */
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Si usas el SVG que te puse de ejemplo, este CSS adicional no es necesario
+   porque el tamaño del SVG se define en sus atributos width/height y el color con 'currentColor'.
+   Si usas Font Awesome, el font-size de #btnVolverArriba controlará el tamaño del ícono. */
+#btnVolverArriba svg,
+#btnVolverArriba i {
+    display: block; /* Ayuda con la alineación de algunos íconos */
+}
+
+.contact-form-wrapper {
+    background-color: #ffffff; /* Fondo blanco para la tarjeta */
+    padding: 30px;             /* Espacio interno */
+    border-radius: 8px;        /* Bordes redondeados */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Sombra sutil */
+    max-width: 650px;          /* Ancho máximo para el formulario */
+    margin: 0 auto;            /* Centra el contenedor del formulario */
+}
+
+#pagina-contacto .form-label{
+    font-weight: 600; /* Letra un poco más gruesa para las etiquetas */
+    margin-bottom: 0.6rem;
+    color: #495057; /* Color de texto un poco más suave */
+}
+
+#pagina-contacto .form-control {
+    border-radius: 6px; /* Bordes ligeramente más redondeados */
+    border: 1px solid #ced4da;
+    padding: 0.8rem 1rem; /* Un poco más de padding interno */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    background-color: #f8f9fa; /* Un fondo muy sutil para los campos */
+}
+
+#pagina-contacto .form-control:focus {
+    border-color: #25d366; /* Color de borde al hacer foco (verde WhatsApp de tu tema) */
+    box-shadow: 0 0 0 0.2rem rgba(37, 211, 102, 0.25); /* Resplandor con el mismo verde */
+    background-color: #fff; /* Fondo blanco al hacer foco */
+}
+
+#pagina-contacto textarea.form-control {
+    min-height: 130px; /* Un poco más de altura para el área de mensaje */
+}
+
+#pagina-contacto form button[type="submit"].btn-primary {
+    background-color: #25d366; /* Verde WhatsApp de tu tema (o el color primario que prefieras) */
+    border-color: #25d366;
+    padding: 0.75rem 2rem;     /* Más padding horizontal */
+    font-weight: 600;
+    border-radius: 6px;
+    /* text-transform: uppercase; */ /* Opcional: para letras mayúsculas */
+    letter-spacing: 0.5px;   /* Opcional: ligero espaciado entre letras */
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+    display: block;            /* Para poder centrarlo con márgenes */
+    min-width: 220px;          /* Un ancho mínimo para que no se vea muy pequeño */
+    margin: 1.5rem auto 0 auto; /* Margen superior y centrado horizontal */
+}
+
+#pagina-contacto form button[type="submit"].btn-primary:hover {
+    background-color: #1ebd5a; /* Un verde más oscuro para el hover */
+    border-color: #1ebd5a;
+    transform: translateY(-2px); /* Efecto de levantarse un poco */
+}
+
+#pagina-contacto form button[type="submit"].btn-primary:active {
+    transform: translateY(0); /* Quita el efecto de levantarse al hacer clic */
+}
+
+/* CSS para hacer el iframe del mapa responsivo */
+.map-responsive {
+    overflow: hidden;
+    padding-bottom: 75%; /* Proporción 4:3. Prueba con 56.25% para 16:9 o ajústalo a tu gusto */
+    position: relative;
+    height: 0;
+    border-radius: 6px; /* Bordes redondeados para el contenedor del mapa */
+}
+
+.map-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border: 0; /* Aseguramos que no tenga borde el iframe mismo */
+}
+
+/* ============================================= */
+/* === Estilos para Preguntas Frecuentes (FAQ) === */
+/* ============================================= */
+
+.faq-section .accordion-button {
+    font-weight: 600;
+    font-size: 1.1rem; /* Un poco más grande para las preguntas */
+}
+
+.faq-section .accordion-button:not(.collapsed) {
+    color: #fff;
+    background-color: #343a40; /* Un gris oscuro para la pregunta activa */
+}
+
+/* Cambia color de la flecha de Bootstrap cuando el acordeón está abierto */
+.faq-section .accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.faq-section .accordion-button:focus {
+    box-shadow: 0 0 0 0.2rem rgba(37, 211, 102, 0.25); /* Resplandor verde al hacer foco (mismo que tu formulario) */
+    border-color: #25d366; /* Borde verde al hacer foco */
+}
+
+.faq-section .accordion-item {
+    margin-bottom: 0.75rem; /* Más espacio entre preguntas */
+    border-radius: 8px !important; /* Bordes redondeados para cada item */
+    border: 1px solid #dee2e6; /* Borde sutil para cada item */
+}
+
+.faq-section .accordion-body {
+    background-color: #f8f9fa; /* Fondo sutil para la respuesta */
+    font-size: 0.95rem; /* Tamaño de letra para respuestas */
+    line-height: 1.6;   /* Espaciado de línea para mejor lectura */
+}
+
+/* === ESTILO PARA BOTÓN VERDE PRINCIPAL === */
+.btn-verde-principal {
+    background-color: #198754; /* Tu verde WhatsApp */
+    border-color: #198754;     /* Borde del mismo color */
+    color: white;              /* Texto blanco */
+    padding: 0.75rem 1.5rem;   /* Ajusta el padding si es necesario, similar al del form */
+    font-weight: 600;          /* Mismo grosor de letra que el botón del form */
+    border-radius: 6px;        /* Mismos bordes redondeados */
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+    text-decoration: none;     /* Asegura que no haya subrayado si es un <a> */
+}
+
+.btn-verde-principal:hover {
+    background-color: #157347; /* Verde más oscuro para el hover */
+    border-color: #146c43;
+    color: white;              /* Mantiene el texto blanco */
+    transform: translateY(-2px); /* Efecto de levantarse un poco */
+    text-decoration: none;
+}
+
+.btn-verde-principal:active { /* Opcional: efecto al hacer clic */
+    transform: translateY(0);
+    background-color: #146c43; /* Un verde aún más oscuro para el active */
+    border-color: #13653f;
+}
+
+/* ============================================= */
+/* === Estilos para Pantalla de Carga === */
+/* ============================================= */
+
+#pantalla-carga {
+    position: fixed;   /* Se queda fija cubriendo toda la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff; /* Fondo blanco */
+    z-index: 99999;    /* Muy alto para estar encima de todo */
+    display: flex;     /* Para centrar .logo-carga en la pantalla */
+    justify-content: center;
+    align-items: center;
+    opacity: 1;        /* Visible por defecto */
+    visibility: visible; /* Visible por defecto */
+    transition: opacity 0.5s ease-out, visibility 0s linear 0.5s; /* Transiciones */
+}
+
+#pantalla-carga.oculta {
+    opacity: 0;
+    visibility: hidden;   /* Para asegurar que no interfiera */
+    pointer-events: none; /* Para que no interfiera con los clics cuando está oculta */
+}
+
+.logo-carga {
+    position: relative;     /* ESENCIAL para que el spinner se posicione respecto a este div */
+    display: inline-block;  /* Para que el div se ajuste al tamaño de la imagen si la imagen está dentro */
+    /* Si quieres ver sus límites durante la prueba, puedes añadir temporalmente: */
+    /* background-color: lightblue; */
+    /* width: 150px; */ /* O el ancho de tu logo-carga img */
+    /* height: 150px; */ /* O el alto de tu logo-carga img */
+}
+
+.logo-carga img {
+    width: 150px; /* El tamaño que deseas para tu logo en la pantalla de carga */
+    height: auto;   /* Mantiene la proporción */
+    display: block; /* Importante */
+}
+
+.spinner-posicionador {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra este div */
+    width: 190px;  /* ANCHO: Debe ser mayor que el width de .logo-carga img (ej. 150px logo -> 190px spinner) */
+    height: 190px; /* ALTO: Igual al ancho */
+}
+
+.spinner-rotador {
+    width: 100%; /* Ocupa el 100% del .spinner-posicionador */
+    height: 100%;/* Ocupa el 100% del .spinner-posicionador */
+    border: 5px solid rgba(0, 0, 0, 0.1); /* Borde gris claro del círculo */
+    border-top-color: #25d366;          /* Tu verde para el segmento que gira */
+    border-radius: 50%;                 /* Círculo perfecto */
+    animation: spin 1s linear infinite; /* Animación de giro */
+    box-sizing: border-box;             /* Para que el borde no sume al tamaño */
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg); /* La animación solo rota */
+    }
+}
+
+/* === Estilos para Sección Modelos Compatibles === */
+#modelos-compatibles {
+    background-color: #f8f9fa; /* Un fondo gris claro, o puedes dejar el blanco de tu body */
+}
+
+.modelo-card {
+    border: none; /* Quita el borde por defecto de las tarjetas si quieres */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modelo-card:hover {
+    transform: translateY(-5px); /* Ligero efecto al pasar el mouse */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12) !important; /* Sombra más pronunciada al pasar el mouse */
+}
+
+.modelo-card-img {
+    max-height: 100px;  /* Altura máxima para la imagen/logo de la marca */
+    width: auto;        /* El ancho se ajustará para mantener la proporción */
+    max-width: 70%;     /* Evita que logos muy anchos ocupen todo el espacio de la tarjeta */
+    object-fit: contain;/* Asegura que toda la imagen se vea, sin recortarse, ajustándose al espacio */
+    /* margin-top: 1.5rem; ya no es necesario si lo pones en la clase de la img */
+    /* margin-bottom: 1rem; ya no es necesario */
+}
+
+/* Estilos para las imágenes DENTRO de las tarjetas de producto */
+.product-card img {
+    width: 100%;          /* Hace que la imagen intente ocupar el ancho de su contenedor (dentro de la tarjeta) */
+    max-width: 180px;     /* Un ancho máximo para que no sean demasiado grandes si el contenedor es ancho. Ajusta este valor. */
+    height: 180px;        /* Una altura fija o máxima. Ajusta este valor. */
+    object-fit: contain;  /* ¡CLAVE! Asegura que toda la imagen se vea, manteniendo su proporción */
+    object-position: center; /* Centra la imagen dentro de su cuadro si 'contain' deja espacios */
+    display: block;         /* Ayuda con la alineación y el espaciado */
+    margin-left: auto;      /* Centra la imagen horizontalmente si su 'width' es menor que el espacio disponible */
+    margin-right: auto;     /* Centra la imagen horizontalmente */
+    border-radius: 12px;    /* Mantenemos los bordes redondeados que tenías */
+    /* background-color: #f0f0f0; */ /* Opcional: color de fondo si 'contain' deja espacios vacíos */
+}
+
+.modelo-card .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Para empujar el botón hacia abajo si las descripciones varían en altura */
+}
+
+.modelo-card .card-title {
+    color: #343a40; /* Color para el título de la marca */
+}
+
+.modelo-card .btn-outline-success { /* O el color que prefieras para estos botones */
+    border-color: #367588;
+    color: #367588;
+}
+
+.modelo-card .btn-outline-success:hover {
+    background-color: #367588;
+    color: white;
+}
+
+/* Estilos para la tarjeta de producto en el catálogo */
+.product-card-image-link {
+    text-decoration: none; /* Quita subrayado del enlace de la imagen */
+}
+
+.product-card-image {
+    width: 100%;          /* La imagen ocupa el ancho del enlace (que tiene padding) */
+    max-width: 200px;     /* Limita el tamaño máximo de la imagen. AJUSTA ESTO. */
+    height: auto;         /* Mantiene la proporción */
+    max-height: 200px;    /* Limita la altura máxima. AJUSTA ESTO. */
+    object-fit: contain;  /* Muestra la imagen completa, sin recortar */
+    object-position: center;
+    display: block;
+    margin: 0 auto 0.75rem auto; /* Centrada, con margen inferior */
+    border-radius: 6px; /* Bordes redondeados para la imagen */
+}
+
+.product-card .card-title a {
+    color: #343a40; /* Color para el nombre del producto */
+}
+.product-card .card-title a:hover {
+    color: #25d366; /* Tu color verde para el hover */
+}
+
+.product-price {
+    color: #198754; /* Verde "success" de Bootstrap para el precio, o el que prefieras */
+}
+
+.product-whatsapp-link i.fab.fa-whatsapp {
+    margin-right: 0.3em; /* Pequeño espacio entre el ícono y el texto de WhatsApp */
+}
+
+/* === Estilos para Tarjeta de Producto Minimalista === */
+.product-card-minimal {
+    border: 1px solid #e9ecef;
+    border-radius: 0.375rem;
+    transition: box-shadow 0.2s ease-in-out;
+    background-color: #fff;
+}
+
+.product-card-minimal:hover {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+.product-card-minimal .product-image-link {
+    display: block;
+    padding: 1rem; /* O ajusta según tu gusto */
+}
+
+.product-card-minimal .card-img-top, /* Si Bootstrap usa esta clase para la imagen */
+.product-card-minimal .product-card-image { /* O tu clase personalizada */
+    width: 100%;
+    max-width: 170px;  /* AJUSTA este valor para el tamaño de imagen deseado */
+    height: 170px;     /* AJUSTA este valor (o usa max-height y height:auto) */
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    margin: 0 auto 0.5rem auto;
+    border-radius: 6px;
+}
+
+.product-card-minimal .product-name {
+    font-weight: bold; 
+    color: #343a40;   /* Mantenemos un color oscuro para el texto */
+    font-size: 1.2rem;  /* Tamaño estándar de Bootstrap (fs-6). AJUSTA SI ES NECESARIO para igualar. */
+                      /* Si los títulos en tu index.html (Apple Watch, etc.) son más pequeños,
+                         usa un valor como 0.9rem o 0.95rem aquí. */
+    margin-bottom: 0.35rem; /* Ajusta el margen inferior si es necesario */
+}
+
+.product-card-minimal .product-name a {
+    color: inherit; /* Hereda el color de .product-name */
+    text-decoration: none;
+}
+
+.product-card-minimal .product-name a:hover {
+    color: #198754; /* Tu color de hover (verde success) */
+    text-decoration: none; 
+}
+
+.product-card-minimal .product-price {
+    /* color: #198754; ya tienes text-success en el HTML */
+    font-size: 1.1rem; /* Ajusta si fs-5 es muy grande o pequeño */
+}
+
+.product-card-minimal .product-view-options-btn {
+    width: 80%; /* Para que no ocupe todo el ancho de la tarjeta */
+    margin: 0 auto; /* Centra el botón */
+    /* La clase btn-outline-secondary de Bootstrap le dará el estilo de borde gris.
+       Si usaste btn-outline-azul-petroleo antes, usa esa clase aquí. */
+}
+
+/* === ESTILO PARA BOTÓN AZUL PETRÓLEO (VERSIÓN OUTLINE) === */
+.btn-outline-azul-petroleo {
+    border-color: #367588 !important;   /* Color del borde Azul Petróleo */
+    color: #367588 !important;          /* Color del texto Azul Petróleo */
+    background-color: transparent; /* Fondo transparente */
+    padding: 0.375rem 0.75rem; /* Padding similar a btn-sm de Bootstrap */
+    font-size: 0.875rem;      /* Tamaño de fuente similar a btn-sm */
+    line-height: 1.5;         /* Altura de línea similar a btn-sm */
+    border-radius: 0.25rem;   /* Border-radius similar a btn-sm */
+    font-weight: 600;         /* O el que prefieras */
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+    text-decoration: none;
+}
+
+.btn-outline-azul-petroleo:hover {
+    background-color: #367588 !important; /* Fondo se rellena al pasar el mouse */
+    color: white !important;              /* Texto cambia a blanco */
+    border-color: #367588 !important;
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+.btn-outline-azul-petroleo:active {
+    transform: translateY(0);
+    background-color: #2A5A6A !important; /* Un tono más oscuro para active */
+    border-color: #2A5A6A !important;
+	color: white !important;
+}
+/* === Estilos para Indicadores de Color en Tarjetas de Producto === */
+.product-colors {
+    display: flex;            /* ¡CLAVE! Alinea los spans (círculos) en una fila horizontal */
+    justify-content: center;  /* Centra los círculos si hay espacio extra */
+    align-items: center;      /* Alinea los círculos verticalmente si tuvieran alturas diferentes (aunque son iguales) */
+    gap: 6px;                 /* Espacio entre cada círculo de color. Ajusta a tu gusto (antes teníamos 5px o 3px en .color-swatch margin) */
+    margin-top: 0.5rem;       /* Espacio arriba de los círculos */
+    margin-bottom: 0.75rem;   /* Espacio debajo de los círculos, antes del precio */
+}
+
+/* Estilos para los indicadores de color en las tarjetas de producto */
+.color-swatch {
+    display: inline-block; /* display:flex en el padre ya los pone en línea, pero inline-block no daña */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #000000; /* O el borde que te gustó */
+    cursor: pointer;
+    /* margin: 0 3px; */ /* El 'gap' en .product-colors ya maneja el espaciado */
+    background-clip: padding-box;
+}
+
+.color-swatch:hover {
+    transform: scale(1.1); /* Un ligero agrandamiento al pasar el mouse */
+}
+
+.color-swatch.selected {
+    /* Efecto de borde más grueso y quizás un poco más oscuro o del color del swatch */
+    /* Opción A: Sombra que simula un borde más grueso */
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #367588; /* Borde blanco interno, luego borde azul petróleo */
+                                                    /* Ajusta #367588 al color que quieras para el resaltado */
+    transform: scale(1.1); /* Para que también se vea un poco más grande */
+}
+/* === Estilos para Estrellas de Calificación en Tarjetas de Producto === */
+.product-rating {
+    color: #ffc107; /* Color amarillo/dorado para las estrellas */
+    font-size: 0.85rem; /* Tamaño de las estrellas */
+}
+
+.product-rating i {
+    margin-right: 1px; /* Espacio muy pequeño entre estrellas */
+}
+
+.product-rating .rating-count {
+    color: #6c757d; /* Color gris para el contador de valoraciones */
+}
+
+/* === Estilos para Carrusel de Modelos (VERSIÓN FINAL) === */
+.carousel-container {
+  position: relative;
+  margin: 2rem 0;
+  overflow: hidden;
+}
+
+div#modelos-scroll {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem 24px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  width: 100%; /* <-- AÑADE ESTA LÍNEA */
+  box-sizing: border-box; /* <-- AÑADE ESTA LÍNEA */
+}
+
+div#modelos-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+div#modelos-scroll > .card.modelo-card {
+  flex: 0 0 250px !important;
+  width: 250px !important;
+  scroll-snap-align: start;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  color: #333;
+  border: 1px solid #ddd;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.carousel-btn:hover {
+  background-color: #f1f1f1;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.btn-left {
+  left: 15px; 
+}
+
+.btn-right {
+  right: 15px; 
+}

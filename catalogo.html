@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo - BetaGar</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome (para íconos como WhatsApp) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Tu CSS personalizado -->
+  <link rel="stylesheet" href="css/estilos.css">
+   
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/img/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="manifest" href="img/site.webmanifest">
+
+</head>
+<body>
+
+	<div id="pantalla-carga">
+    <div class="logo-carga">
+        <img src="img/logo.png" alt="Cargando..."> 
+		<div class="spinner-posicionador">
+            <div class="spinner-rotador"></div>
+        </div>
+    </div>
+	</div>
+
+	<header class="site-header sticky-top">
+    <div class="container header-container">
+        <div class="logo">
+			<a href="index.html">  <img src="img/logo.png" alt="BetaGar" class="logo">
+			</a>
+		</div>
+        <nav class="main-nav-links">
+			<ul>
+				<li><a href="catalogo.html" class="nav-active">Catálogo</a></li> 
+				<li><a href="index.html#resena">Reseñas</a></li>      
+				<li><a href="contacto.html">Contacto</a></li>
+			</ul>
+		</nav>
+        <div class="header-cart"> <button id="btn-carrito" class="btn btn-outline-dark position-relative" data-bs-toggle="modal" data-bs-target="#modalCarrito">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="carrito-contador" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="display: none;">
+                0
+                </span>
+            </button>
+        </div>
+    </div>
+    </header>
+
+    <section id="catalogo" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5 fw-bold">Nuestro Catálogo</h2> 
+		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4"> 
+            <div class="col mb-4">
+				<div class="card product-card-minimal h-100" data-marca="apple">
+					<a href="detalle-apple-ultra-azul.html" class="product-card-image-link d-block p-3">
+						<img src="img/apple-watch-ultra.png" class="card-img-top product-card-image" alt="Correas Loop Alpine">
+					</a>
+				<div class="card-body text-center d-flex flex-column">
+				<h5 class="product-name mb-1"> <a href="..." class="text-decoration-none text-dark">Correas Loop Alpine</a>
+				</h5>
+
+            <div class="product-rating mb-2">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i> 
+                <span class="rating-count ms-1 small text-muted">(33)</span>
+            </div>
+ 
+			<div class="product-colors mb-3 mt-1">
+			<span class="color-swatch" style="background-color: #2c3e50;" title="Azul medianoche"></span>
+			</div>
+            
+            <p class="product-price fw-bold fs-5 mt-1 mb-3 text-success">$6.990</p> 
+			
+			<div class="mt-auto"> <a href="detalle-apple-ultra-azul.html" class="btn btn-outline-azul-petroleo btn-sm product-view-options-btn d-block w-100">Ver opciones</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		<div class="col mb-4"> 
+			<div class="card product-card-minimal h-100" data-marca="samsung">
+				<a href="detalle-samsung-galaxy-watch.html" class="product-card-image-link d-block p-3">
+				<img src="img/samsung-watch-negro.png" class="card-img-top product-card-image" alt="Correa Samsung Galaxy Watch" id="productImage-samsung-1"> </a>
+				<div class="card-body text-center d-flex flex-column">
+					<h5 class="product-name mb-1">
+						<a href="detalle-samsung-galaxy-watch.html" class="text-decoration-none text-dark">Correa Samsung Galaxy Watch</a>
+					</h5>
+					
+					<div class="product-rating mb-2">
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="far fa-star"></i> 
+						<span class="rating-count ms-1 small text-muted">(33)</span>
+					</div>
+            
+				<div class="product-rating mb-2"></div>
+						<div class="product-colors mb-2">
+							<span class="color-swatch" style="background-color: black; border: 1px solid #ccc;" title="Negro" 
+							data-image-src="img/samsung-watch-negro.png" 
+							onclick="cambiarImagenProducto('productImage-samsung-1', 'img/samsung-watch-negro.png', this)"></span>
+							
+							<span class="color-swatch" style="background-color: #2962ff; border: 1px solid #ccc;" title="Azul" 
+							data-image-src="img/samsung-watch-azul.png" 
+							onclick="cambiarImagenProducto('productImage-samsung-1', 'img/samsung-watch-azul.png', this)"></span>
+							
+							<span class="color-swatch" style="background-color: #f8f9fa; border: 1px solid #ccc;" title="Blanco" 
+							data-image-src="img/samsung-watch-blanco.png" 
+							onclick="cambiarImagenProducto('productImage-samsung-1', 'img/samsung-watch-blanco.png', this)"></span>
+							
+							<span class="color-swatch" style="background-color: #71949a; border: 1px solid #ccc;" title="Glaciar" 
+							data-image-src="img/samsung-watch-glaciar.png" 
+							onclick="cambiarImagenProducto('productImage-samsung-1', 'img/samsung-watch-glaciar.png', this)"></span>
+							
+							<span class="color-swatch" style="background-color: #D8BFD8; border: 1px solid #ccc;" title="Morado" 
+							data-image-src="img/samsung-watch-morado.png" 
+							onclick="cambiarImagenProducto('productImage-samsung-1', 'img/samsung-watch-morado.png', this)"></span>
+							
+							<span class="color-swatch" style="background-color: #013220; border: 1px solid #ccc;" title="Verde" 
+							data-image-src="img/samsung-watch-verde.png" 
+							onclick="cambiarImagenProducto('productImage-samsung-1', 'img/samsung-watch-verde.png', this)"></span>
+						</div>
+            
+					<p class="product-price fw-bold fs-5 mt-1 mb-3 text-success">$4.990</p> 
+
+					<div class="mt-auto"> 
+						<a href="detalle-samsung-galaxy-watch.html" class="btn btn-outline-azul-petroleo btn-sm product-view-options-btn d-block w-100">Ver opciones</a>
+					</div>
+				</div>
+			</div>
+		</div>
+			
+
+    <div class="col mb-4">
+		<div class="card product-card-minimal h-100" data-marca="huawei">
+				<a href="detalle-huawei-watch" class="product-card-image-link d-block p-3">
+					<img src="img/huawei-gt2e-blanco-negro.png" class="product-card-image" alt="Correa Blanco con Negro" id="imagenHuaweiColor">
+				</a>
+				
+			<div class="card-body text-center d-flex flex-column">
+				<h5 class="product-name mb-1">
+					<a href="detalle-huawei-blanco-negro.html" class="text-decoration-none text-dark">Correas Huawei GT 2e</a>
+				</h5>
+
+				<div class="product-rating mb-2">
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star-half-alt"></i> 
+					<i class="far fa-star"></i>
+				<span class="rating-count ms-1 small text-muted">(15)</span>
+				</div>
+    
+			<div class="product-colors mb-3 mt-1"> 
+			<span class="color-swatch" 
+              style="background: linear-gradient(-45deg, black 0%, black 49.5%, white 50.5%, white 100%); border: 1px solid #777;" 
+              title="Blanco con Negro"
+              data-image-src="img/huawei-gt2e-blanco-negro.png" 
+              onclick="cambiarImagenProducto('imagenHuaweiColor', 'img/huawei-gt2e-blanco-negro.png', this)">
+			</span>
+        
+			<span class="color-swatch" 
+              style="background: linear-gradient(-45deg, black 0%, black 49.5%, #bbdf97 50.5%, #bbdf97 100%); border: 1px solid #777;" 
+              title="Verde y Negro"
+              data-image-src="img/huawei-gt2e-verde-negro.png" 
+              onclick="cambiarImagenProducto('imagenHuaweiColor', 'img/huawei-gt2e-verde-negro.png', this)">
+			</span>
+        
+			<span class="color-swatch" 
+              style="background-color: #000000; border: 1px solid #777;"
+              title="Negro"
+              data-image-src="img/huawei-gt2e-negro.png" 
+              onclick="cambiarImagenProducto('imagenHuaweiColor', 'img/huawei-gt2e-negro.png', this)">
+			</span>
+			
+			<span class="color-swatch" 
+              style="background-color: #454545; border: 1px solid #777;" 
+              title="Gris"
+              data-image-src="img/huawei-gt2e-gris.png" 
+              onclick="cambiarImagenProducto('imagenHuaweiColor', 'img/huawei-gt2e-gris.png', this)">
+			</span>
+			
+			<span class="color-swatch" 
+              style="background: linear-gradient(-45deg, #59e3c2 0%, #59e3c2 49.5%, #454545 50.5%, #454545 100%); border: 1px solid #777;" 
+              title="Gris y Verde"
+              data-image-src="img/huawei-gt2e-gris-verde.png" 
+              onclick="cambiarImagenProducto('imagenHuaweiColor', 'img/huawei-gt2e-gris-verde.png', this)">
+			</span>
+			
+			<span class="color-swatch" 
+              style="background: linear-gradient(-45deg, #ffa3a3 0%, #ffa3a3 49.5%, #000000 50.5%, #000000 100%); border: 1px solid #777;" 
+              title="Negro y Rosa"
+              data-image-src="img/huawei-gt2e-negro-rosa.png" 
+              onclick="cambiarImagenProducto('imagenHuaweiColor', 'img/huawei-gt2e-negro-rosa.png', this)">
+			</span>
+			
+			<span class="color-swatch" 
+              style="background: linear-gradient(-45deg, black 0%, black 49.5%, #D32F2F 50.5%, #D32F2F 100%); border: 1px solid #777;" 
+              title="Rojo y Negro"
+              data-image-src="img/huawei-gt2e-rojo-negro.png" 
+              onclick="cambiarImagenProducto('imagenHuaweiColor', 'img/huawei-gt2e-rojo-negro.png', this)">
+			</span>
+			</div>
+				<p class="product-price fw-bold fs-5 mt-1 mb-3 text-success">$5.990</p> 
+
+			<div class="mt-auto"> 
+				<a href="detalle-huawei-blanco-negro.html" class="btn btn-outline-azul-petroleo btn-sm product-view-options-btn d-block w-100">Ver opciones</a>
+			</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="col mb-4">
+		<div class="card product-card-minimal h-100" data-marca="xiaomi">
+				<a href="detalle-xiaomi-watch.html" class="product-card-image-link d-block p-3">
+					<img src="img/xiaomi-negro.png" class="product-card-image" alt="Correa Negro" id="imagenXiaomiColor">
+				</a>
+				
+			<div class="card-body text-center d-flex flex-column">
+				<h5 class="product-name mb-1">
+					<a href="detalle-xiaomi-watch.html" class="text-decoration-none text-dark">Correas Xiaomi</a>
+				</h5>
+
+				<div class="product-rating mb-2">
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star-half-alt"></i> 
+					<i class="far fa-star"></i>
+				<span class="rating-count ms-1 small text-muted">(7)</span>
+				</div>
+    
+			<div class="product-colors mb-3 mt-1"> 
+			<span class="color-swatch" 
+              style="background-color: #000000; border: 1px solid #777;" 
+              title="Negro"
+              data-image-src="img/xiaomi-negro.png" 
+              onclick="cambiarImagenProducto('imagenXiaomiColor', 'img/xiaomi-negro.png', this)">
+			</span>
+        
+			<span class="color-swatch" 
+              style="background-color: #191970; border: 1px solid #777;" 
+              title="Azul"
+              data-image-src="img/azul.png" 
+              onclick="cambiarImagenProducto('imagenXiaomiColor', 'img/xiaomi-azul.png', this)">
+			</span>
+        
+			<span class="color-swatch" 
+              style="background-color: #454545; border: 1px solid #777;"
+              title="Gris"
+              data-image-src="img/xiaomi-gris.png" 
+              onclick="cambiarImagenProducto('imagenXiaomiColor', 'img/xiaomi-gris.png', this)">
+			</span>
+			
+			<span class="color-swatch" 
+              style="background-color: #FF4500; border: 1px solid #777;" 
+              title="Naranja"
+              data-image-src="img/xiaomi-naranja.png" 
+              onclick="cambiarImagenProducto('imagenXiaomiColor', 'img/xiaomi-naranja.png', this)">
+			</span>
+			
+			<span class="color-swatch" 
+              style="background-color: #FFC0CB; border: 1px solid #777;" 
+              title="Rosa"
+              data-image-src="img/xiaomi-rosa.png" 
+              onclick="cambiarImagenProducto('imagenXiaomiColor', 'img/xiaomi-rosa.png', this)">
+			</span>
+			
+			<span class="color-swatch" 
+              style="background-color: #FF0000; border: 1px solid #777;" 
+              title="Rojo"
+              data-image-src="img/xiaomi-rojo.png" 
+              onclick="cambiarImagenProducto('imagenXiaomiColor', 'img/xiaomi-rojo.png', this)">
+			</span>
+			
+			</div>
+				<p class="product-price fw-bold fs-5 mt-1 mb-3 text-success">$4.990</p> 
+
+			<div class="mt-auto"> 
+				<a href="detalle-xiaomi.html" class="btn btn-outline-azul-petroleo btn-sm product-view-options-btn d-block w-100">Ver opciones</a>
+			</div>
+			</div>
+		</div>
+	</div>
+
+        </div> 
+	</div> 
+	</section>
+	
+	<a href="https://wa.me/56949760364" class="floating-whatsapp" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+	</a>
+	
+	<footer class="footer bg-dark text-white pt-4">
+    <div class="container text-center">
+    <p class="mb-2 fw-bold">BetaGar</p>
+    <ul class="footer-links">
+    <li><a href="#catalogo" class="text-white text-decoration-none">Catálogo</a></li>
+    <li><a href="#resena" class="text-white text-decoration-none">Reseñas</a></li>
+    <li><a href="https://wa.me/56949760364" class="text-white text-decoration-none">Contacto</a></li>
+	</ul>
+
+    <div class="social-icons mt-3">
+      <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook fa-lg me-3"></i></a>
+      <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram fa-lg me-3"></i></a>
+      <a href="https://wa.me/56949760364" target="_blank"><i class="fab fa-whatsapp fa-lg"></i></a>
+    </div>
+    <p class="mt-3 small mb-0">&copy; <span id="year"></span> BetaGar. Todos los derechos reservados.</p>
+    </div>
+    </footer>
+	
+	<button id="btnVolverArriba" title="Volver arriba">
+    <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/carrito.js"></script>      
+	<script src="js/botonarriba.js"></script>
+	<script src="js/cargador.js"></script>
+	<script src="js/filtro-catalogo.js"></script>
+	<script src="js/variantes-color.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BetaGar</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome <para íconos como WhatsApp> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Tu CSS personalizado -->
+  <link rel="stylesheet" href="css/estilos.css">
+     
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/img/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="manifest" href="img/site.webmanifest">
+   
+</head>
+<body>
+
+	<div id="pantalla-carga">
+    <div class="logo-carga">
+        <img src="img/logo.png" alt="Cargando..."> 
+		<div class="spinner-posicionador">
+            <div class="spinner-rotador"></div>
+        </div>
+    </div>
+	</div>
+
+  <header class="site-header sticky-top">
+    <div class="container header-container">
+        <div class="logo">
+			<a href="index.html">  <img src="img/logo.png" alt="BetaGar" class="logo">
+			</a>
+		</div>
+        <nav class="main-nav-links"> 
+			<ul>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="#resena">Reseñas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="header-cart"> <button id="btn-carrito" class="btn btn-outline-dark position-relative" data-bs-toggle="modal" data-bs-target="#modalCarrito">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="carrito-contador" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="display: none;">
+                0
+                </span>
+            </button>
+        </div>
+    </div>
+  </header>
+  
+  <section class="hero-banner d-flex align-items-center" style="background-image: url('img/banner-principal.png');">
+  <div class="container text-center text-white">
+    <h1 class="display-4 fw-bold">Correas para Smartwatch</h1>
+    <p class="lead">Elige tu estilo, pide por WhatsApp y recibelo donde estés!</p>
+    <a href="https://wa.me/56949760364" class="btn btn-success btn-lg mt-3">
+      Comprar ahora por WhatsApp
+    </a>
+  </div>
+  </section>
+  
+  <!-- Nueva Session --> 
+  
+  <section id="modelos-compatibles" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4 fw-bold">Modelos Compatibles</h2>
+    </div>
+
+    <div class="carousel-container">
+        <button class="carousel-btn btn-left" onclick="scrollModelos(-1)">&#10094;</button>
+        <button class="carousel-btn btn-right" onclick="scrollModelos(1)">&#10095;</button>
+
+        <div class="modelos-scroll" id="modelos-scroll">
+            
+            <div class="card modelo-card h-100 text-center shadow-sm">
+                <img src="img/apple-watch-logo.png" class="card-img-top modelo-card-img mx-auto mt-3" alt="Apple Watch">
+                <div class="card-body">
+                    <h5 class="card-title fw-semibold">Apple Watch</h5>
+                    <p class="card-text small">Series 4, 5, 6, 7, 8, 9, SE, Ultra</p>
+                    <a href="catalogo.html?marca=apple" class="btn btn-outline-success btn-sm mt-2">Ver Correas</a>
+                </div>
+            </div>
+
+            <div class="card modelo-card h-100 text-center shadow-sm">
+                <img src="img/samsung-watch.png" class="card-img-top modelo-card-img mx-auto mt-3" alt="Samsung Watch">
+                <div class="card-body">
+                    <h5 class="card-title fw-semibold">Samsung Galaxy Watch</h5>
+                    <p class="card-text small">Watch 4, 5, 6, Active Series</p>
+                    <a href="catalogo.html?marca=samsung" class="btn btn-outline-success btn-sm mt-2">Ver Correas</a>
+                </div>
+            </div>
+
+            <div class="card modelo-card h-100 text-center shadow-sm">
+                <img src="img/xiaomi-watch.png" class="card-img-top modelo-card-img mx-auto mt-3" alt="Xiaomi Watch">
+                <div class="card-body">
+                    <h5 class="card-title fw-semibold">Xiaomi Watch</h5>
+                    <p class="card-text small">Xiaomi S1, Redmi Active 3, Watch 2, Watch 2 Pro, Watch S3, S4</p>
+                    <a href="catalogo.html?marca=xiaomi" class="btn btn-outline-success btn-sm mt-2">Ver Correas</a>
+                </div>
+            </div>
+            
+            <div class="card modelo-card h-100 text-center shadow-sm">
+                <img src="img/huawei-watch-logo.png" class="card-img-top modelo-card-img mx-auto mt-3" alt="Huawei Watch">
+                <div class="card-body">
+                    <h5 class="card-title fw-semibold">Huawei Watch</h5>
+                    <p class="card-text small">GT 2, GT 3, GT 4, Fit Series</p>
+                    <a href="catalogo.html?marca=huawei" class="btn btn-outline-success btn-sm mt-2">Ver Correas</a>
+                </div>
+            </div>
+            
+            <div class="card modelo-card h-100 text-center shadow-sm">
+                <img src="img/estandar.png" class="card-img-top modelo-card-img mx-auto mt-3" alt="Otros Modelos">
+                <div class="card-body">
+                    <h5 class="card-title fw-semibold">Otros Modelos</h5>
+                    <p class="card-text small">Estándar 22 mm (¡Consúltanos!)</p>
+                    <a href="contacto.html" class="btn btn-outline-success btn-sm mt-2">Ver Correas</a>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+</section>
+
+<section id="resena" class="py-5 bg-white">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">¿Qué dicen nuestros clientes?</h2>
+      <p class="text-muted">Experiencias reales de quienes ya confiaron en nosotros</p>
+    </div>
+
+    <div id="carouselResenas" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <div class="card shadow-sm border-0 rounded-4 p-4 mx-auto" style="max-width: 700px;">
+            <div class="d-flex align-items-center gap-3">
+              <img src="https://placehold.co/60x60" alt="Cliente" class="rounded-circle" style="width: 60px; height: 60px;">
+              <div>
+                <h5 class="mb-1 fw-semibold">Juan Pérez</h5>
+                <p class="text-muted small mb-1">Compró una correa negra</p>
+                <p class="mb-0">“Excelente calidad y atención. Me llegó súper rápido y la correa está impecable. ¡Recomendadísimo!”</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="card shadow-sm border-0 rounded-4 p-4 mx-auto" style="max-width: 700px;">
+            <div class="d-flex align-items-center gap-3">
+              <img src="https://placehold.co/60x60" alt="Cliente" class="rounded-circle" style="width: 60px; height: 60px;">
+              <div>
+                <h5 class="mb-1 fw-semibold">Lucía Fernández</h5>
+                <p class="text-muted small mb-1">Compró una correa deportiva azul</p>
+                <p class="mb-0">“La atención por WhatsApp fue rápida y clara. El producto me encantó. ¡Gracias!”</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="card shadow-sm border-0 rounded-4 p-4 mx-auto" style="max-width: 700px;">
+            <div class="d-flex align-items-center gap-3">
+              <img src="https://placehold.co/60x60" alt="Cliente" class="rounded-circle" style="width: 60px; height: 60px;">
+              <div>
+                <h5 class="mb-1 fw-semibold">Carlos Gómez</h5>
+                <p class="text-muted small mb-1">Compró una correa metálica</p>
+                <p class="mb-0">“Buena calidad y excelente presentación. Muy satisfecho con la compra.”</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Indicadores -->
+      <div class="carousel-indicators mt-4">
+        <button type="button" data-bs-target="#carouselResenas" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#carouselResenas" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#carouselResenas" data-bs-slide-to="2"></button>
+      </div>
+    </div>
+
+    <!-- Botón de WhatsApp -->
+    <div class="text-center mt-5">
+      <a href="https://wa.me/56949760364?text=Quiero%20enviar%20mi%20opinión%20sobre%20mi%20compra" target="_blank" class="btn btn-success btn-lg shadow-sm rounded-pill px-4">
+        <i class="fab fa-whatsapp me-2"></i>Enviar tu opinión
+      </a>
+    </div>
+  </div>
+</section>
+
+  <a href="https://wa.me/56949760364" class="floating-whatsapp" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script src="https://kit.fontawesome.com/a2b2e5e34c.js" crossorigin="anonymous"></script>
+  
+  <footer class="footer bg-dark text-white pt-4">
+  <div class="container text-center">
+    <p class="mb-2 fw-bold">BetaGar</p>
+    <ul class="footer-links">
+    <li><a href="#catalogo" class="text-white text-decoration-none">Catálogo</a></li>
+    <li><a href="#resena" class="text-white text-decoration-none">Reseñas</a></li>
+    <li><a href="https://wa.me/56949760364" class="text-white text-decoration-none">Contacto</a></li>
+	</ul>
+
+    <div class="social-icons mt-3">
+      <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook fa-lg me-3"></i></a>
+      <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram fa-lg me-3"></i></a>
+      <a href="https://wa.me/56949760364" target="_blank"><i class="fab fa-whatsapp fa-lg"></i></a>
+    </div>
+    <p class="mt-3 small mb-0">&copy; <span id="year"></span> BetaGar. Todos los derechos reservados.</p>
+  </div>
+  </footer>
+
+<script>
+  document.getElementById<"year">.textContent = new Date<>.getFullYear<>;
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Modal del carrito -->
+<div class="modal fade" id="modalCarrito" tabindex="-1" aria-labelledby="carritoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold" id="carritoModalLabel">Tu carrito</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <ul id="lista-carrito" class="list-group mb-3">
+          <!-- Aquí se insertan los productos -->
+        </ul>
+		
+		<!-- Total del carrito -->
+        <p class="text-end"><strong>Total: $<span id="total-carrito">0</span></strong></p>
+		
+        <!-- Botón de finalizar con enlace a WhatsApp -->
+        <div class="text-end">
+          <a id="btn-finalizar" class="btn btn-success" target="_blank">Finalizar compra por WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button id="btnVolverArriba" title="Volver arriba">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+	<script src="js/carrito.js"></script>      
+	<script src="js/botonarriba.js"></script>
+	<script src="js/cargador.js"></script>
+	<script src="js/carrusel-modelos.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
